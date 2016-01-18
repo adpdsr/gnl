@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fviolin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 18:26:36 by fviolin           #+#    #+#             */
-/*   Updated: 2015/12/10 10:44:57 by fviolin          ###   ########.fr       */
+/*   Created: 2015/12/01 12:03:58 by adu-pelo          #+#    #+#             */
+/*   Updated: 2015/12/09 15:18:09 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,19 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t	i;
-	size_t	j;
-	size_t len;
+	int start;
+	int end;
+	int len;
 
-	i = 0;
-	j = 0;
-	len = 0;
-	if (!s)
-		return (NULL);
-	while (ft_isspace(s[i]) == 1)
-		i++;
-	while (s[j])
-	{
-		if (ft_isspace(s[j]) == 0)
-		{
-			j++;
-			len = j;
-		}
-		else
-			j++;
-	}
-	if (len == 0)
-		return (ft_strdup(""));
-	return (ft_strsub(s, i, len - i));
+	start = 0;
+	end = 0;
+	len = ft_strlen(s);
+	while (ft_isspace(s[start]))
+		start++;
+	while (ft_isspace(s[len - end - 1]))
+		end++;
+	if ((len - start - end) <= 0)
+		return (ft_strnew(0));
+	else
+		return (ft_strsub(s, start, (size_t)(len - start - end)));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fviolin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 11:58:16 by fviolin           #+#    #+#             */
-/*   Updated: 2015/12/02 14:14:06 by fviolin          ###   ########.fr       */
+/*   Created: 2015/11/24 10:32:16 by adu-pelo          #+#    #+#             */
+/*   Updated: 2015/12/07 11:01:57 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	*d1;
-	unsigned char	*s2;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	i = 0;
-	d1 = (unsigned char *)dst;
-	s2 = (unsigned char *)src;
-	while (i < n && (s2[i] != (unsigned char)c))
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	while (s[i] != (unsigned char)c && i < n)
 	{
-		d1[i] = s2[i];
+		d[i] = s[i];
 		i++;
 	}
-	if (s2[i] == (unsigned char)c)
+	if (s[i] == (unsigned char)c)
 	{
-		d1[i] = s2[i];
+		d[i] = s[i];
 		i++;
-		return (d1 + i);
+		return (d + i);
 	}
 	else
 		return (NULL);

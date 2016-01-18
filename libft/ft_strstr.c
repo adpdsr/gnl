@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fviolin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 17:53:27 by fviolin           #+#    #+#             */
-/*   Updated: 2015/12/09 17:56:55 by fviolin          ###   ########.fr       */
+/*   Created: 2015/11/30 11:03:08 by adu-pelo          #+#    #+#             */
+/*   Updated: 2015/12/14 10:50:34 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	int	i;
+	int i;
 	int j;
 
 	i = 0;
 	j = 0;
-	if (s2[j] == '\0')
+	if (!s2[j])
 		return ((char *)s1);
 	if (s1[i] && s2[j])
 	{

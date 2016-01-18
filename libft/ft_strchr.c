@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fviolin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 10:50:34 by fviolin           #+#    #+#             */
-/*   Updated: 2015/12/09 17:51:49 by fviolin          ###   ########.fr       */
+/*   Created: 2015/11/24 16:57:27 by adu-pelo          #+#    #+#             */
+/*   Updated: 2015/12/07 11:06:44 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,5 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*fd;
-
-	if (c == '\0')
-		return ((char *)s + ft_strlen(s));
-	while (*s)
-	{
-		if (*s == c)
-		{
-			fd = (char *)s;
-			return (fd);
-		}
-		s++;
-	}
-	return (NULL);
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }

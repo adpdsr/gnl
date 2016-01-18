@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 16:37:31 by adu-pelo          #+#    #+#             */
-/*   Updated: 2015/12/07 11:11:56 by adu-pelo         ###   ########.fr       */
+/*   Created: 2015/12/02 13:04:18 by adu-pelo          #+#    #+#             */
+/*   Updated: 2015/12/09 10:47:15 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+char	*ft_strrev(char *s)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else
-		return (c);
+	int		end;
+	int		start;
+	char	tmp;
+
+	start = 0;
+	end = ft_strlen(s) - 1;
+	while (start < end)
+	{
+		tmp = s[start];
+		s[start] = s[end];
+		s[end] = tmp;
+		start++;
+		end--;
+	}
+	return (s);
 }
