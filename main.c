@@ -6,7 +6,7 @@
 /*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/24 16:21:34 by adu-pelo          #+#    #+#             */
-/*   Updated: 2016/01/24 16:21:58 by adu-pelo         ###   ########.fr       */
+/*   Updated: 2016/01/24 16:30:25 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int		main(int ac, char **av)
 		printf("%d || %s\n", ret_value, line);
 	}
 	close(fd);
+	while (1) {}
 	return (0);
 }

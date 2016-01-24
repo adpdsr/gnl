@@ -6,7 +6,7 @@
 /*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 16:28:18 by adu-pelo          #+#    #+#             */
-/*   Updated: 2016/01/24 16:28:09 by adu-pelo         ###   ########.fr       */
+/*   Updated: 2016/01/24 16:33:46 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ int			get_next_line(int const fd, char **line)
 			return (1);
 		}
 	}
+	// leaks
 	return ((*line = str) && ft_strlen(*line) != 0);
 }
