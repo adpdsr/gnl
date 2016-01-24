@@ -6,14 +6,13 @@
 /*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 16:28:18 by adu-pelo          #+#    #+#             */
-/*   Updated: 2016/01/24 16:22:49 by adu-pelo         ###   ########.fr       */
+/*   Updated: 2016/01/24 16:28:09 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
-static char *ft_mem_concat(char *str, char *buff)
+static char	*ft_mem_concat(char *str, char *buff)
 {
 	char *tmp;
 
@@ -40,8 +39,8 @@ int			get_next_line(int const fd, char **line)
 {
 	static char overf[255][BUFF_SIZE + 1];
 	char		buff[BUFF_SIZE + 1];
-	char 		*str;
-	int 		ret;
+	char		*str;
+	int			ret;
 
 	if (fd < 0 || line == NULL)
 		return (-1);
@@ -63,8 +62,4 @@ int			get_next_line(int const fd, char **line)
 		}
 	}
 	return ((*line = str) && ft_strlen(*line) != 0);
-	//free(str);
-	//str = NULL;
-	//*line = NULL;
-	//return (0);
 }
