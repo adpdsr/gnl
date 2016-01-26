@@ -6,7 +6,7 @@
 /*   By: adu-pelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 16:28:18 by adu-pelo          #+#    #+#             */
-/*   Updated: 2016/01/24 16:33:46 by adu-pelo         ###   ########.fr       */
+/*   Updated: 2016/01/26 14:27:13 by adu-pelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ static int	ft_get_line(char **line, char *buff, char *overf)
 
 int			get_next_line(int const fd, char **line)
 {
-	static char overf[255][BUFF_SIZE + 1];
+	static char overf[256][BUFF_SIZE + 1];
 	char		buff[BUFF_SIZE + 1];
 	char		*str;
 	int			ret;
 
-	if (fd < 0 || line == NULL)
+	if (fd < 0 || fd > 256 || !line || BUFF_SIZE <= 0)
 		return (-1);
 	if (ft_get_line(line, overf[fd], overf[fd]) == 1)
 		return (1);
@@ -61,6 +61,5 @@ int			get_next_line(int const fd, char **line)
 			return (1);
 		}
 	}
-	// leaks
 	return ((*line = str) && ft_strlen(*line) != 0);
 }
