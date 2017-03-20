@@ -1,8 +1,8 @@
-#get_next_line
+# get_next_line
   
 Projet Ecole 42 (Paris)
   
-##Synopsis
+## Synopsis
 
 int&emsp;get_next_line(int const fd, char **line)  
 
